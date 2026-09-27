@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2026 안전점검 보고서의 장별 내용을 검색하고 열람하는 페이지">
+  <title>2026 안전점검 보고서 검색</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#chapter-list">본문 바로가기</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">행정안전부 안전관리과</p>
+      <h1>2026 안전점검 보고서</h1>
+      <p class="intro">장별 주요 내용을 검색하고 열람할 수 있습니다.</p>
+      <div class="search-panel" role="search">
+        <label for="search-input">보고서 검색</label>
+        <div class="search-row">
+          <input id="search-input" type="search" placeholder="제목 또는 본문 키워드를 입력하세요" autocomplete="off">
+          <button id="clear-button" type="button">초기화</button>
+        </div>
+        <p id="result-count" class="result-count" aria-live="polite">자료를 불러오는 중입니다.</p>
+      </div>
+    </div>
+  </header>
+  <main id="main-content" class="container">
+    <section aria-labelledby="chapters-heading">
+      <h2 id="chapters-heading" class="visually-hidden">보고서 장 목록</h2>
+      <div id="status-message" class="status-message" hidden></div>
+      <div id="chapter-list" class="card-grid" aria-busy="true"></div>
+    </section>
+  </main>
+  <footer><p>2026 안전점검 보고서 · 가상 자료</p></footer>
+</body>
+</html>
