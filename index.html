@@ -1,1 +1,51 @@
-<!doctype html><html lang='ko'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>정부 안내서비스 검색</title><link rel='stylesheet' href='style.css'><script defer src='app.js'></script></head><body><h1>정부 안내서비스 검색</h1><input id='q' placeholder='서비스명 검색'><select id='field'><option value=''>전체 분야</option></select><div id='count'>결과 0건</div><div id='list'></div></body></html>
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="2026 안전점검 보고서의 장별 내용을 검색하고 열람하는 페이지">
+  <title>2026 안전점검 보고서 검색</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">본문 바로가기</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">부서 직원 열람용</p>
+      <h1>2026 안전점검 보고서</h1>
+      <p class="intro">제목과 본문에서 필요한 내용을 검색할 수 있습니다.</p>
+
+      <form class="search-panel" role="search" onsubmit="return false;">
+        <label for="q">보고서 검색</label>
+        <div class="search-row">
+          <input id="q" name="q" type="search" placeholder="검색어 입력 (예: 점검, 예산, 시정)" autocomplete="off">
+          <button id="clear-button" type="button">초기화</button>
+        </div>
+      </form>
+
+      <p id="count" class="result-count" role="status" aria-live="polite">데이터를 불러오는 중입니다.</p>
+    </div>
+  </header>
+
+  <main id="main-content" class="content" tabindex="-1">
+    <section aria-labelledby="chapters-heading">
+      <h2 id="chapters-heading" class="visually-hidden">보고서 장 목록</h2>
+      <div id="list" class="card-grid" aria-busy="true"></div>
+      <div id="empty" class="empty-state" hidden>
+        <h2>검색 결과가 없습니다.</h2>
+        <p>다른 검색어를 입력하거나 초기화 버튼을 눌러 주세요.</p>
+      </div>
+      <div id="error" class="error-state" role="alert" hidden>
+        <h2>데이터를 불러오지 못했습니다.</h2>
+        <p>장데이터.json 파일이 index.html과 같은 폴더에 있는지 확인해 주세요.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>2026 안전점검 보고서 검색·열람 페이지</p>
+  </footer>
+</body>
+</html>
