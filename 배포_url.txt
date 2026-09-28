@@ -1,0 +1,3 @@
+https://username.github.io/repository-name/
+
+※ GitHub Pages 배포 후 실제 접속 URL로 변경하여 제출하세요.
